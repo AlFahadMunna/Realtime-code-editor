@@ -3,13 +3,19 @@ import Client from "../components/Client";
 import Editor from "../components/Editor";
 import { initSocket } from "../socket";
 import { ACTIONS } from "../../Actions";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import toast from "react-hot-toast";
 
 const EditorPage = () => {
   const navigate = useNavigate();
   const socketRef = useRef(null);
   const location = useLocation();
+  const { roomId } = useParams();
   useEffect(() => {
     const init = async () => {
       socketRef.current = await initSocket();

@@ -18,7 +18,7 @@ const Editor = () => {
     }
     init();
   }, []);
-  return <textarea id="realtimeEditor"></textarea>;
+  return <textarea id="realtimeEditor" />;
 };
 
 export default Editor;
